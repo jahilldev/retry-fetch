@@ -5,7 +5,6 @@
  * -------------------------------- */
 
 interface IOptions extends Request {
-  fetch?: typeof globalThis.fetch;
   retries?: number;
   timeout: number;
 }
@@ -18,7 +17,7 @@ interface IOptions extends Request {
 
 async function retryFetch(
   requestUrl: string,
-  { fetch = globalThis.fetch, retries = 3, timeout = 30e3, ...options }: Partial<IOptions>
+  { retries = 3, timeout = 30e3, ...options }: Partial<IOptions>
 ): Promise<Response> {
   let error: Error = new Error();
   const meta = { requestUrl, retries, options, timeout: false };
