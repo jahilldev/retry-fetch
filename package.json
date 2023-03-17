@@ -8,8 +8,12 @@
   "author": "James Hill <contact@jameshill.dev>",
   "license": "MIT",
   "scripts": {
+    "clean": "rimraf ./dist",
     "start": "esbuild ./src/index --watch --outfile=./dist/index.js",
-    "build": "esbuild ./src/index --outfile=./dist/index.js"
+    "prebuild": "tsc",
+    "build": "esbuild ./src/index --outfile=./dist/index.js",
+    "lint": "eslint ./src/**/*.ts",
+    "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
@@ -20,6 +24,8 @@
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.4.0",
     "typescript": "^5.0.2"
   }
 }
