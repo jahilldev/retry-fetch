@@ -4,9 +4,19 @@
   "description": "Simple, lightweight wrapper around the native fetch() API. Provides helpful abstrations, like request retry, data type parsing, and more.",
   "type": "module",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "repository": "git@github.com:jahilldev/retry-fetch.git",
   "author": "James Hill <contact@jameshill.dev>",
   "license": "MIT",
+  "engines": {
+    "node": ">=17"
+  },
+  "files": [
+    "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/jahilldev/retry-fetch/issues"
+  },
   "scripts": {
     "clean": "rimraf ./dist",
     "start": "esbuild ./src/index --watch --outfile=./dist/index.js",
