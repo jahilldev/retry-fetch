@@ -1,7 +1,7 @@
 {
   "name": "retry-fetch",
   "version": "1.0.0",
-  "description": "Simple, lightweight wrapper around the native fetch() API. Provides helpful abstrations, like request retry, data type parsing, and more.",
+  "description": "Simple, lightweight wrapper around the native fetch() API. Provides helpful abstrations, like request retry, etc.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
