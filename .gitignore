@@ -1,0 +1,13 @@
+dist
+node_modules
+packages/*/dist
+packages/*/tests/coverage
+
+lerna-debug.log
+npm-debug.log
+package-lock.json
+yarn-error.log
+
+.idea
+.DS_Store
+.vscode

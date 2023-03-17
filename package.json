@@ -2,9 +2,24 @@
   "name": "retry-fetch",
   "version": "1.0.0",
   "description": "Simple, lightweight wrapper around the native fetch() API. Provides helpful abstrations, like request retry, data type parsing, and more.",
+  "type": "module",
   "main": "./dist/index.js",
   "repository": "git@github.com:jahilldev/retry-fetch.git",
   "author": "James Hill <contact@jameshill.dev>",
   "license": "MIT",
-  "private": false
+  "scripts": {
+    "start": "esbuild ./src/index --watch --outfile=./dist/index.js",
+    "build": "esbuild ./src/index --outfile=./dist/index.js"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.15.3",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "esbuild": "^0.17.12",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "typescript": "^5.0.2"
+  }
 }
