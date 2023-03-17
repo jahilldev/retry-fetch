@@ -36,9 +36,7 @@ async function retryFetch(
 
       clearTimeout(onTimeout);
 
-      if (result.ok) {
-        return result;
-      }
+      return result;
     } catch (reason) {
       error = reason as Error;
     }
