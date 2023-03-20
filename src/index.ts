@@ -7,6 +7,7 @@
 interface IOptions extends Request {
   retries?: number;
   timeout: number;
+  backoff?: number;
 }
 
 /* -----------------------------------
@@ -17,7 +18,7 @@ interface IOptions extends Request {
 
 async function retryFetch(
   requestUrl: string,
-  { retries = 3, timeout = 30e3, ...options }: Partial<IOptions>
+  { retries = 3, timeout = 30e3, backoff = 500, ...options }: Partial<IOptions>
 ): Promise<Response> {
   let error: Error = new Error();
   const meta = { requestUrl, retries, options, timeout: false };
@@ -40,7 +41,7 @@ async function retryFetch(
       error = reason as Error;
     }
 
-    await sleep(2 ** attempt * 10e3);
+    await sleep(2 ** attempt * backoff);
 
     retries -= 1;
     attempt += 1;
